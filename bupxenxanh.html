@@ -1,0 +1,3102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website thuyết trình Búp Sen Xanh - Sơn Tùng">
+<title>BÚP SEN XANH | Hành trình từ cội nguồn đến khát vọng</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Be Vietnam Pro",Arial,sans-serif;
+    background:#fffaf0;
+    color:#29453d;
+    line-height:1.75;
+    overflow-x:hidden;
+}
+
+img{
+    display:block;
+    width:100%;
+}
+
+button,a{
+    font-family:inherit;
+}
+
+a{
+    text-decoration:none;
+}
+
+:root{
+    --green:#397b68;
+    --green-dark:#153f34;
+    --green-deep:#09261f;
+    --green-light:#e7f3ed;
+    --pink:#d88d9e;
+    --pink-light:#f8e5e9;
+    --gold:#d2a34e;
+    --cream:#fffaf0;
+    --white:#fff;
+    --text:#29453d;
+    --muted:#6b8179;
+    --shadow:0 25px 70px rgba(20,65,52,.15);
+    --shadow-small:0 12px 35px rgba(20,65,52,.12);
+}
+
+/* LOADER */
+.page-loader{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    background:#09261f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:opacity .8s,visibility .8s;
+}
+
+.page-loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-content{
+    text-align:center;
+    color:white;
+}
+
+.loader-lotus{
+    font-size:60px;
+    animation:loaderFloat 1.5s infinite ease-in-out;
+}
+
+.loader-content p{
+    margin-top:15px;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+@keyframes loaderFloat{
+    0%,100%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-15px) scale(1.08);}
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    z-index:5000;
+    padding:17px 5%;
+    background:rgba(255,250,240,.86);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(57,123,104,.1);
+    transition:.4s;
+}
+
+header.scrolled{
+    padding:10px 5%;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+}
+
+.navbar{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:"Playfair Display",serif;
+    font-size:25px;
+    font-weight:800;
+    color:var(--green-dark);
+}
+
+.logo span{
+    color:var(--pink);
+}
+
+.nav-links{
+    display:flex;
+    gap:22px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:var(--text);
+    font-size:12px;
+    font-weight:700;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:2px;
+    background:var(--pink);
+    transition:.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* LOTUS */
+.floating-lotus{
+    position:fixed;
+    z-index:2;
+    pointer-events:none;
+    opacity:.13;
+    font-size:40px;
+}
+
+.lotus-1{
+    top:22%;
+    left:2%;
+    animation:float 7s infinite ease-in-out;
+}
+
+.lotus-2{
+    top:60%;
+    right:2%;
+    animation:float 9s infinite ease-in-out 1s;
+}
+
+.lotus-3{
+    bottom:10%;
+    left:7%;
+    animation:float 8s infinite ease-in-out 2s;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(0);}
+    50%{transform:translateY(-25px) rotate(7deg);}
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:
+        linear-gradient(
+            rgba(7,35,28,.45),
+            rgba(7,35,28,.78)
+        ),
+        url("https://bbt.1cdn.vn/thumbs/1200x800/2024/06/27/c025837938cb9b95c2da.jpg")
+        center/cover fixed;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    right:-300px;
+    top:-300px;
+    border-radius:50%;
+    background:rgba(255,255,255,.04);
+    animation:heroCircle 12s infinite linear;
+}
+
+@keyframes heroCircle{
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+}
+
+.hero-content{
+    position:relative;
+    z-index:5;
+    max-width:1000px;
+    padding:40px;
+    animation:heroIn 1.3s ease;
+}
+
+.hero-kicker{
+    font-size:13px;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+    color:#f4dca7;
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(60px,10vw,125px);
+    line-height:.95;
+    margin-bottom:30px;
+    text-shadow:0 10px 35px rgba(0,0,0,.35);
+}
+
+.hero h1 span{
+    color:#f0beca;
+}
+
+.hero-subtitle{
+    max-width:800px;
+    margin:auto;
+    font-size:20px;
+    color:#f4f7f5;
+}
+
+.hero-author{
+    margin-top:18px;
+    color:#f4dca7;
+    font-weight:800;
+}
+
+.hero-button{
+    display:inline-flex;
+    margin-top:35px;
+    padding:14px 28px;
+    border-radius:50px;
+    color:white;
+    border:1px solid rgba(255,255,255,.45);
+    background:rgba(255,255,255,.1);
+    backdrop-filter:blur(12px);
+    transition:.35s;
+}
+
+.hero-button:hover{
+    transform:translateY(-5px);
+    background:white;
+    color:var(--green-dark);
+}
+
+.scroll-down{
+    position:absolute;
+    bottom:25px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:11px;
+    letter-spacing:3px;
+    opacity:.8;
+}
+
+.scroll-down span{
+    display:block;
+    font-size:25px;
+    animation:bounce 1.5s infinite;
+}
+
+@keyframes heroIn{
+    from{
+        opacity:0;
+        transform:translateY(45px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
+}
+
+/* COMMON */
+section{
+    padding:110px 5%;
+    position:relative;
+}
+
+.container{
+    max-width:1250px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 60px;
+}
+
+.eyebrow{
+    color:var(--pink);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.section-title h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,5vw,65px);
+    line-height:1.15;
+    color:var(--green-dark);
+    margin:12px 0 20px;
+}
+
+.section-title p{
+    color:var(--muted);
+    font-size:16px;
+}
+
+.section-number{
+    position:absolute;
+    top:45px;
+    right:5%;
+    font-family:"Playfair Display",serif;
+    font-size:100px;
+    color:rgba(57,123,104,.055);
+    font-weight:800;
+}
+
+/* IMAGE */
+.image-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+    background:#eee;
+}
+
+.image-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .8s ease;
+}
+
+.image-card:hover img{
+    transform:scale(1.08);
+}
+
+.image-caption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:25px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.75));
+    transform:translateY(8px);
+    transition:.4s;
+}
+
+.image-card:hover .image-caption{
+    transform:translateY(0);
+}
+
+.image-caption small{
+    color:#f4dca7;
+    font-weight:700;
+}
+
+.image-caption h3{
+    font-family:"Playfair Display",serif;
+    font-size:23px;
+}
+
+/* TÁC GIẢ */
+.author{
+    background:var(--green-light);
+}
+
+.author-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
+    align-items:center;
+}
+
+.author-image{
+    height:600px;
+}
+
+.author-text h2{
+    font-family:"Playfair Display",serif;
+    color:var(--green-dark);
+    font-size:58px;
+    margin:8px 0 20px;
+}
+
+.author-text p{
+    margin-bottom:18px;
+}
+
+.author-facts{
+    margin-top:30px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.author-fact{
+    background:white;
+    border-radius:18px;
+    padding:20px;
+}
+
+.author-fact strong{
+    display:block;
+    color:var(--green-dark);
+}
+
+.author-fact span{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.quote{
+    margin-top:30px;
+    padding:22px 25px;
+    border-left:4px solid var(--pink);
+    background:rgba(255,255,255,.65);
+    border-radius:0 15px 15px 0;
+    font-family:"Playfair Display",serif;
+    font-size:21px;
+    color:var(--green-dark);
+}
+
+/* TÁC PHẨM */
+.intro{
+    background:white;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:minmax(280px,450px) 1fr;
+    gap:75px;
+    align-items:center;
+}
+
+.book-cover{
+    height:600px;
+}
+
+.intro-text h3{
+    font-family:"Playfair Display",serif;
+    color:var(--green-dark);
+    font-size:42px;
+    line-height:1.25;
+    margin-bottom:20px;
+}
+
+.intro-text p{
+    margin-bottom:17px;
+}
+
+.fact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:30px;
+}
+
+.fact{
+    padding:20px;
+    background:var(--green-light);
+    border-radius:17px;
+    text-align:center;
+}
+
+.fact strong{
+    display:block;
+    color:var(--green-dark);
+    font-size:18px;
+}
+
+.fact span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+/* HOÀN CẢNH / MẠCH TRUYỆN */
+.structure{
+    background:#fffaf0;
+}
+
+.structure-intro{
+    text-align:center;
+    max-width:850px;
+    margin:0 auto 50px;
+}
+
+.three-parts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.part-box{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:var(--shadow-small);
+    transition:.4s;
+}
+
+.part-box:hover{
+    transform:translateY(-10px);
+}
+
+.part-image{
+    height:250px;
+}
+
+.part-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+.part-content{
+    padding:28px;
+}
+
+.part-number{
+    color:var(--pink);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:3px;
+}
+
+.part-content h3{
+    font-family:"Playfair Display",serif;
+    font-size:28px;
+    color:var(--green-dark);
+    margin:8px 0 12px;
+}
+
+.part-content p{
+    color:var(--muted);
+}
+
+/* 2 ẢNH BỔ SUNG */
+.route-images{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    margin-top:35px;
+}
+
+.route-image{
+    height:390px;
+}
+
+.route-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+/* STAGE */
+.stage-section{
+    background:white;
+}
+
+.stage{
+    display:grid;
+    grid-template-columns:1fr 1.05fr;
+    gap:65px;
+    align-items:center;
+    margin-bottom:110px;
+}
+
+.stage:nth-child(even){
+    direction:rtl;
+}
+
+.stage:nth-child(even)>*{
+    direction:ltr;
+}
+
+.stage:last-child{
+    margin-bottom:0;
+}
+
+.stage-image{
+    height:500px;
+}
+
+.stage-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+.stage-number{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:4px;
+    color:var(--pink);
+}
+
+.stage h3{
+    font-family:"Playfair Display",serif;
+    color:var(--green-dark);
+    font-size:44px;
+    line-height:1.2;
+    margin:10px 0 20px;
+}
+
+.stage p{
+    margin-bottom:16px;
+}
+
+.stage-points{
+    margin-top:25px;
+    display:grid;
+    gap:12px;
+}
+
+.stage-point{
+    padding:15px 18px;
+    background:var(--green-light);
+    border-radius:13px;
+    border-left:4px solid var(--green);
+}
+
+.stage-point strong{
+    color:var(--green-dark);
+}
+
+/* TIMELINE */
+.timeline-section{
+    background:var(--green-dark);
+    color:white;
+}
+
+.timeline-section .section-title h2{
+    color:white;
+}
+
+.timeline-section .section-title p{
+    color:#b9ccc5;
+}
+
+.timeline{
+    position:relative;
+}
+
+.timeline-line{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:50%;
+    width:3px;
+    transform:translateX(-50%);
+    background:rgba(255,255,255,.18);
+}
+
+.timeline-item{
+    position:relative;
+    width:calc(50% - 50px);
+    margin-bottom:65px;
+    background:white;
+    color:var(--text);
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 55px rgba(0,0,0,.2);
+}
+
+.timeline-item:nth-child(odd){
+    margin-right:auto;
+}
+
+.timeline-item:nth-child(even){
+    margin-left:auto;
+}
+
+.timeline-dot{
+    position:absolute;
+    top:35px;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    background:var(--pink);
+    border:6px solid var(--green-dark);
+    z-index:4;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot{
+    right:-62px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot{
+    left:-62px;
+}
+
+.timeline-photo{
+    height:270px;
+}
+
+.timeline-photo img{
+    height:100%;
+    object-fit:cover;
+}
+
+.timeline-info{
+    padding:28px;
+}
+
+.timeline-info small{
+    color:var(--pink);
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.timeline-info h3{
+    font-family:"Playfair Display",serif;
+    color:var(--green-dark);
+    font-size:30px;
+    margin:5px 0 12px;
+}
+
+/* NỘI DUNG */
+.content{
+    background:var(--cream);
+}
+
+.content-layout{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.content-photo{
+    height:620px;
+}
+
+.content-photo img{
+    height:100%;
+    object-fit:cover;
+}
+
+.content-text h3{
+    font-family:"Playfair Display",serif;
+    color:var(--green-dark);
+    font-size:42px;
+    line-height:1.25;
+    margin:10px 0 20px;
+}
+
+.content-text p{
+    margin-bottom:18px;
+}
+
+.content-list{
+    display:grid;
+    gap:12px;
+    margin-top:25px;
+}
+
+.content-list div{
+    background:white;
+    border-radius:15px;
+    padding:15px 18px;
+    box-shadow:0 7px 25px rgba(0,0,0,.05);
+}
+
+.content-list strong{
+    color:var(--green-dark);
+}
+
+/* GIÁ TRỊ / BÀI HỌC */
+.themes{
+    background:white;
+}
+
+.theme-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.theme-card{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    min-height:230px;
+    background:var(--green-light);
+    border-radius:23px;
+    overflow:hidden;
+    box-shadow:var(--shadow-small);
+    transition:.4s;
+}
+
+.theme-card:hover{
+    transform:translateY(-8px);
+}
+
+.theme-image{
+    height:100%;
+}
+
+.theme-image img{
+    height:100%;
+    object-fit:cover;
+}
+
+.theme-content{
+    padding:25px;
+}
+
+.theme-content .icon{
+    font-size:30px;
+}
+
+.theme-content h3{
+    color:var(--green-dark);
+    margin:5px 0 8px;
+    font-size:20px;
+}
+
+.theme-content p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* BÀI HỌC */
+.lesson{
+    background:var(--pink-light);
+}
+
+.lesson-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.lesson-card{
+    position:relative;
+    background:white;
+    border-radius:23px;
+    overflow:hidden;
+    box-shadow:var(--shadow-small);
+    transition:.45s;
+}
+
+.lesson-card:hover{
+    transform:translateY(-10px);
+}
+
+.lesson-photo{
+    height:220px;
+}
+
+.lesson-photo img{
+    height:100%;
+    object-fit:cover;
+}
+
+.lesson-body{
+    padding:25px;
+}
+
+.lesson-body .lesson-icon{
+    font-size:30px;
+}
+
+.lesson-body h3{
+    color:var(--green-dark);
+    font-size:20px;
+    margin:6px 0 8px;
+}
+
+.lesson-body p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* THÔNG ĐIỆP */
+.message{
+    background:
+        linear-gradient(
+            rgba(21,63,52,.87),
+            rgba(9,38,31,.93)
+        ),
+        url("https://bbt.1cdn.vn/thumbs/1200x800/2024/06/27/c025837938cb9b95c2da.jpg")
+        center/cover fixed;
+    color:white;
+    text-align:center;
+}
+
+.message-content{
+    max-width:950px;
+    margin:auto;
+}
+
+.message h2{
+    font-family:"Playfair Display",serif;
+    font-size:60px;
+    line-height:1.15;
+    margin:15px 0 25px;
+}
+
+.message p{
+    font-size:18px;
+    color:#e0ebe7;
+}
+
+.message-highlight{
+    margin-top:35px;
+    padding:25px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(10px);
+}
+
+/* GALLERY */
+.gallery{
+    background:white;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-rows:230px;
+    gap:15px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+.gallery-item:nth-child(1){
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+.gallery-item:nth-child(5){
+    grid-row:span 2;
+}
+
+.gallery-item img{
+    height:100%;
+    object-fit:cover;
+    transition:.7s;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.1);
+}
+
+.gallery-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:flex-end;
+    padding:22px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.8));
+    opacity:0;
+    transition:.4s;
+}
+
+.gallery-item:hover .gallery-overlay{
+    opacity:1;
+}
+
+.gallery-overlay h3{
+    font-family:"Playfair Display",serif;
+    font-size:22px;
+}
+
+/* KẾT THÚC */
+.end{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:
+        linear-gradient(
+            rgba(8,35,28,.65),
+            rgba(8,35,28,.9)
+        ),
+        url("https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%205/Ng%C3%A0y_19/NGOC/LA14.jpg")
+        center/cover fixed;
+}
+
+.end-content{
+    max-width:950px;
+}
+
+.end h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(45px,7vw,80px);
+    line-height:1.1;
+    margin:15px 0 30px;
+}
+
+.end p{
+    font-size:19px;
+    color:#e2ebe8;
+}
+
+.end-box{
+    margin-top:35px;
+    padding:25px;
+    border-radius:20px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(12px);
+}
+
+/* MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    background:rgba(0,0,0,.93);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:30px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal img{
+    width:auto;
+    max-width:95%;
+    max-height:90vh;
+    border-radius:15px;
+    box-shadow:0 30px 100px rgba(0,0,0,.7);
+}
+
+.modal-close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+}
+
+/* TOP */
+#topButton{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:50px;
+    height:50px;
+    border:none;
+    border-radius:50%;
+    background:var(--pink);
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+    z-index:500;
+    opacity:0;
+    pointer-events:none;
+    transition:.3s;
+    box-shadow:var(--shadow-small);
+}
+
+#topButton.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(45px);
+    transition:opacity .9s ease,transform .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* FOOTER */
+footer{
+    background:#061b16;
+    color:#9db3ac;
+    text-align:center;
+    padding:35px 20px;
+}
+
+footer strong{
+    color:#f0beca;
+}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .intro-grid,
+    .author-layout,
+    .content-layout,
+    .stage{
+        grid-template-columns:1fr;
+    }
+
+    .stage:nth-child(even){
+        direction:ltr;
+    }
+
+    .three-parts{
+        grid-template-columns:1fr;
+    }
+
+    .route-images{
+        grid-template-columns:1fr;
+    }
+
+    .timeline-line{
+        display:none;
+    }
+
+    .timeline-item{
+        width:100%;
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd){
+        margin-left:0;
+        margin-right:0;
+    }
+
+    .timeline-dot{
+        display:none;
+    }
+
+    .lesson-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-item:nth-child(1){
+        grid-column:span 2;
+    }
+
+    .theme-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:650px){
+
+    section{
+        padding:75px 5%;
+    }
+
+    .hero h1{
+        font-size:62px;
+    }
+
+    .hero-subtitle{
+        font-size:16px;
+    }
+
+    .book-cover,
+    .author-image,
+    .content-photo,
+    .stage-image{
+        height:430px;
+    }
+
+    .route-image{
+        height:300px;
+    }
+
+    .fact-grid,
+    .author-facts,
+    .lesson-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item:nth-child(1){
+        grid-column:span 1;
+        grid-row:span 1;
+    }
+
+    .theme-card{
+        grid-template-columns:120px 1fr;
+    }
+
+    .message h2{
+        font-size:43px;
+    }
+
+    .section-number{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="page-loader" id="loader">
+    <div class="loader-content">
+        <div class="loader-lotus">🌸</div>
+        <p>ĐANG MỞ CÂU CHUYỆN...</p>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header id="header">
+    <div class="navbar">
+
+        <div class="logo">
+            Búp <span>Sen</span> Xanh
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#tacgia">Tác giả</a>
+            <a href="#tacpham">Tác phẩm</a>
+            <a href="#cautruc">Mạch truyện</a>
+            <a href="#hanhtrinh">Hành trình</a>
+            <a href="#noidung">Nội dung</a>
+            <a href="#giatri">Giá trị</a>
+            <a href="#baihoc">Bài học</a>
+            <a href="#thongdiep">Thông điệp</a>
+
+        </div>
+
+    </div>
+</header>
+
+<div class="floating-lotus lotus-1">🌸</div>
+<div class="floating-lotus lotus-2">🌸</div>
+<div class="floating-lotus lotus-3">🌸</div>
+
+
+<!-- =========================================================
+     01 MỞ ĐẦU
+========================================================= -->
+
+<section class="hero" id="mo-dau">
+
+    <div class="hero-content">
+
+        <div class="hero-kicker">
+            Bài thuyết trình văn học
+        </div>
+
+        <h1>
+            Búp Sen <span>Xanh</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Hành trình từ cội nguồn quê hương,
+            qua những năm tháng học tập và trải nghiệm,
+            đến bước ngoặt lớn của tuổi hai mươi.
+        </p>
+
+        <div class="hero-author">
+            Tác giả: Sơn Tùng
+        </div>
+
+        <a class="hero-button" href="#tacgia">
+            Bắt đầu hành trình ↓
+        </a>
+
+    </div>
+
+    <div class="scroll-down">
+        CUỘN ĐỂ KHÁM PHÁ
+        <span>↓</span>
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     02 TÁC GIẢ
+========================================================= -->
+
+<section id="tacgia" class="author">
+
+    <div class="section-number">02</div>
+
+    <div class="container">
+
+        <div class="author-layout">
+
+            <div class="image-card author-image reveal">
+
+                <img
+                    src="https://static.vinwonders.com/production/cum-di-tich-lang-hoang-tru.jpg"
+                    alt="Hoàng Trù"
+                >
+
+                <div class="image-caption">
+                    <small>KHÔNG GIAN GẮN VỚI TÁC PHẨM</small>
+                    <h3>Hoàng Trù – quê ngoại</h3>
+                </div>
+
+            </div>
+
+            <div class="author-text reveal">
+
+                <div class="eyebrow">
+                    02 · Tác giả
+                </div>
+
+                <h2>
+                    Sơn Tùng
+                </h2>
+
+                <p>
+                    Sơn Tùng là nhà văn Việt Nam, tên thật là Bùi Sơn Tùng
+                    (1928–2021), được biết đến với nhiều sáng tác viết về
+                    Hồ Chí Minh, các nhân vật lịch sử và những vấn đề gắn với
+                    lịch sử dân tộc.
+                </p>
+
+                <p>
+                    Với <b>Búp Sen Xanh</b>, nhà văn dành nhiều công sức
+                    sưu tầm tư liệu và xây dựng một thế giới văn học
+                    xoay quanh những năm tháng đầu đời của nhân vật.
+                </p>
+
+                <p>
+                    Điểm đáng chú ý của tác phẩm là sự kết hợp giữa
+                    những tư liệu lịch sử với cách kể chuyện giàu hình ảnh,
+                    cảm xúc và chú trọng đến đời sống gia đình,
+                    quê hương cũng như quá trình hình thành nhân cách.
+                </p>
+
+                <div class="author-facts">
+
+                    <div class="author-fact">
+                        <strong>1928 – 2021</strong>
+                        <span>Thời gian sống</span>
+                    </div>
+
+                    <div class="author-fact">
+                        <strong>Văn học lịch sử</strong>
+                        <span>Mảng sáng tác nổi bật</span>
+                    </div>
+
+                </div>
+
+                <div class="quote">
+                    Từ những điều rất bình dị của tuổi thơ,
+                    tác giả từng bước làm nổi bật quá trình
+                    hình thành một nhân cách lớn.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     03 TÁC PHẨM
+========================================================= -->
+
+<section id="tacpham" class="intro">
+
+    <div class="section-number">03</div>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                03 · Tác phẩm
+            </div>
+
+            <h2>
+                Búp Sen Xanh
+            </h2>
+
+            <p>
+                Một hành trình văn học đi từ những năm tháng đầu đời
+                đến ngưỡng cửa của một quyết định lớn.
+            </p>
+
+        </div>
+
+        <div class="intro-grid">
+
+            <div class="image-card book-cover reveal">
+
+                <img
+                    src="https://product.hstatic.net/200000904433/product/25_206e1307564a41cd95eff1f946b8a6b8_master.jpg"
+                    alt="Bìa sách Búp Sen Xanh"
+                >
+
+                <div class="image-caption">
+
+                    <small>TÁC PHẨM</small>
+
+                    <h3>Búp Sen Xanh</h3>
+
+                </div>
+
+            </div>
+
+            <div class="intro-text reveal">
+
+                <div class="eyebrow">
+                    Giới thiệu
+                </div>
+
+                <h3>
+                    Một câu chuyện về cội nguồn,
+                    sự trưởng thành và khát vọng.
+                </h3>
+
+                <p>
+                    <b>Búp Sen Xanh</b> của nhà văn Sơn Tùng là tác phẩm
+                    tái hiện những năm tháng tuổi thơ, niên thiếu và tuổi hai mươi
+                    của Nguyễn Sinh Cung – Nguyễn Tất Thành.
+                </p>
+
+                <p>
+                    Tác phẩm đưa người đọc trở về với không gian quê hương
+                    xứ Nghệ, nơi gia đình, truyền thống và những câu chuyện
+                    đời thường góp phần hình thành tâm hồn của một cậu bé.
+                </p>
+
+                <p>
+                    Từ đó, câu chuyện mở rộng theo những bước chân nhân vật:
+                    Huế, Dục Thanh, Sài Gòn và cuối cùng là Bến Nhà Rồng –
+                    nơi một chặng đường tuổi trẻ khép lại và một hành trình mới bắt đầu.
+                </p>
+
+                <div class="fact-grid">
+
+                    <div class="fact">
+                        <strong>Sơn Tùng</strong>
+                        <span>Tác giả</span>
+                    </div>
+
+                    <div class="fact">
+                        <strong>Tiểu thuyết</strong>
+                        <span>Thể loại</span>
+                    </div>
+
+                    <div class="fact">
+                        <strong>3 phần</strong>
+                        <span>Kết cấu</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     04 HOÀN CẢNH / MẠCH TRUYỆN
+========================================================= -->
+
+<section id="cautruc" class="structure">
+
+    <div class="section-number">04</div>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                04 · Hoàn cảnh / Mạch truyện
+            </div>
+
+            <h2>
+                Ba chặng đường lớn
+            </h2>
+
+            <p>
+                Tác phẩm được chia thành ba phần,
+                tương ứng với những bước trưởng thành quan trọng của nhân vật.
+            </p>
+
+        </div>
+
+        <div class="three-parts">
+
+            <div class="part-box reveal">
+
+                <div class="image-card part-image">
+
+                    <img
+                        src="https://bbt.1cdn.vn/thumbs/1200x800/2024/06/27/c025837938cb9b95c2da.jpg"
+                        alt="Làng Sen"
+                    >
+
+                </div>
+
+                <div class="part-content">
+
+                    <div class="part-number">
+                        PHẦN I
+                    </div>
+
+                    <h3>
+                        Thời thơ ấu
+                    </h3>
+
+                    <p>
+                        Tập trung vào gia đình, quê hương,
+                        những năm tháng đầu đời và những hạt mầm đầu tiên
+                        của nhân cách.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="part-box reveal">
+
+                <div class="image-card part-image">
+
+                    <img
+                        src="https://cdn.kienthuc.net.vn/images/cf739f51f3276a5be16e9cbb75eb6705677b929f952f8288620ae163ad947fba12f5ad5638fa9d0d221b01ba9c3a24754c6e26fb76ab3b82862cf4f4d5f7c3d57c825bce9f1155ed092fc33a5de377b734ea4d0d7ed2ffaad3577d8227d9ce98824866efba8f65a05fa3d1499cd4b90b/loat-anh-quy-gia-it-nguoi-biet-ve-co-do-hue-nam-1910-Hinh-2.jpg"
+                        alt="Huế xưa"
+                    >
+
+                </div>
+
+                <div class="part-content">
+
+                    <div class="part-number">
+                        PHẦN II
+                    </div>
+
+                    <h3>
+                        Thời niên thiếu
+                    </h3>
+
+                    <p>
+                        Nhân vật rời quê, tiếp xúc với những môi trường
+                        học tập và xã hội rộng lớn hơn, từ đó mở rộng nhận thức.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="part-box reveal">
+
+                <div class="image-card part-image">
+
+                    <img
+                        src="https://media.gody.vn/images/binh-thuan/truong-duc-thanh/10-2016/20161020110641-truong-duc-thanh-phan-thiet-gody%20%287%29.jpg"
+                        alt="Dục Thanh"
+                    >
+
+                </div>
+
+                <div class="part-content">
+
+                    <div class="part-number">
+                        PHẦN III
+                    </div>
+
+                    <h3>
+                        Tuổi hai mươi
+                    </h3>
+
+                    <p>
+                        Những suy nghĩ về đất nước, con người
+                        và tương lai ngày càng rõ ràng,
+                        dẫn đến bước ngoặt tại Bến Nhà Rồng.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2 ẢNH ĐƯỢC BỔ SUNG VÀO MẠCH TRUYỆN -->
+
+        <div class="route-images">
+
+            <div class="image-card route-image reveal">
+
+                <img
+                    src="https://static.vinwonders.com/production/cum-di-tich-lang-hoang-tru.jpg"
+                    alt="Hoàng Trù xưa"
+                >
+
+                <div class="image-caption">
+
+                    <small>CỘI NGUỒN</small>
+
+                    <h3>
+                        Hoàng Trù – nơi lưu giữ ký ức tuổi thơ
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="image-card route-image reveal">
+
+                <img
+                    src="https://cdn.kienthuc.net.vn/images/cf739f51f3276a5be16e9cbb75eb6705677b929f952f8288620ae163ad947fba12f5ad5638fa9d0d221b01ba9c3a24754c6e26fb76ab3b82862cf4f4d5f7c3d57c825bce9f1155ed092fc33a5de377b734ea4d0d7ed2ffaad3577d8227d9ce98824866efba8f65a05fa3d1499cd4b90b/loat-anh-quy-gia-it-nguoi-biet-ve-co-do-hue-nam-1910-Hinh-2.jpg"
+                    alt="Huế xưa"
+                >
+
+                <div class="image-caption">
+
+                    <small>MỞ RỘNG NHẬN THỨC</small>
+
+                    <h3>
+                        Huế xưa – không gian của những năm tháng học tập
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     05 → 09 HÀNH TRÌNH 5 GIAI ĐOẠN
+========================================================= -->
+
+<section id="hanhtrinh" class="stage-section">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                05 · Hành trình
+            </div>
+
+            <h2>
+                Đi theo từng giai đoạn của tác phẩm
+            </h2>
+
+            <p>
+                Không chỉ thay đổi địa điểm,
+                mỗi chặng đường còn đánh dấu một bước phát triển
+                trong nhận thức và tình cảm của nhân vật.
+            </p>
+
+        </div>
+
+
+        <!-- GIAI ĐOẠN 1 -->
+
+        <div class="stage">
+
+            <div class="image-card stage-image reveal">
+
+                <img
+                    src="https://bbt.1cdn.vn/thumbs/1200x800/2024/06/27/c025837938cb9b95c2da.jpg"
+                    alt="Làng Sen"
+                >
+
+                <div class="image-caption">
+
+                    <small>GIAI ĐOẠN 1 · THỜI THƠ ẤU</small>
+
+                    <h3>Làng Sen</h3>
+
+                </div>
+
+            </div>
+
+            <div class="stage-text reveal">
+
+                <div class="stage-number">
+                    GIAI ĐOẠN 1 · CỘI NGUỒN
+                </div>
+
+                <h3>
+                    Làng Sen – nơi bắt đầu từ gia đình và quê hương
+                </h3>
+
+                <p>
+                    Những trang đầu đưa người đọc về miền quê xứ Nghệ,
+                    nơi cuộc sống còn giản dị nhưng giàu truyền thống.
+                    Nhân vật được bao bọc bởi gia đình,
+                    bởi cảnh vật và những sinh hoạt rất đỗi thân thuộc.
+                </p>
+
+                <p>
+                    Điều quan trọng ở giai đoạn này không phải những biến cố lớn,
+                    mà là những điều nhỏ bé được tích lũy từng ngày:
+                    tình yêu thương, sự hiếu thảo, lòng ham học
+                    và sự nhạy cảm trước cuộc sống.
+                </p>
+
+                <div class="stage-points">
+
+                    <div class="stage-point">
+                        <strong>Gia đình:</strong>
+                        là môi trường đầu tiên hình thành nhân cách.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Quê hương:</strong>
+                        tạo nên tình cảm gắn bó với đất và người xứ Nghệ.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Tuổi thơ:</strong>
+                        đặt những “hạt giống” đầu tiên cho sự trưởng thành.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GIAI ĐOẠN 2 -->
+
+        <div class="stage">
+
+            <div class="image-card stage-image reveal">
+
+                <img
+                    src="https://static.vinwonders.com/production/cum-di-tich-lang-hoang-tru.jpg"
+                    alt="Hoàng Trù"
+                >
+
+                <div class="image-caption">
+
+                    <small>GIAI ĐOẠN 2 · THỜI THƠ ẤU</small>
+
+                    <h3>Hoàng Trù</h3>
+
+                </div>
+
+            </div>
+
+            <div class="stage-text reveal">
+
+                <div class="stage-number">
+                    GIAI ĐOẠN 2 · QUÊ NGOẠI
+                </div>
+
+                <h3>
+                    Hoàng Trù – ký ức gia đình và những năm tháng đầu đời
+                </h3>
+
+                <p>
+                    Hoàng Trù gắn với gia đình bên ngoại,
+                    với không gian sống đã lưu giữ nhiều ký ức của tuổi thơ.
+                    Những con người gần gũi trong gia đình
+                    góp phần tạo nên thế giới tình cảm đầu tiên của nhân vật.
+                </p>
+
+                <p>
+                    Qua những trang viết về gia đình,
+                    nhân vật hiện lên không phải như một hình tượng xa cách,
+                    mà trước hết là một cậu bé biết yêu thương,
+                    biết quan tâm và biết suy nghĩ.
+                </p>
+
+                <div class="stage-points">
+
+                    <div class="stage-point">
+                        <strong>Không gian:</strong>
+                        quê ngoại trở thành một phần ký ức sâu đậm.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Tình cảm:</strong>
+                        gia đình là điểm tựa tinh thần.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Nhân cách:</strong>
+                        những phẩm chất tốt đẹp được hình thành từ đời sống bình dị.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GIAI ĐOẠN 3 -->
+
+        <div class="stage">
+
+            <div class="image-card stage-image reveal">
+
+                <img
+                    src="https://cdn.kienthuc.net.vn/images/cf739f51f3276a5be16e9cbb75eb6705677b929f952f8288620ae163ad947fba12f5ad5638fa9d0d221b01ba9c3a24754c6e26fb76ab3b82862cf4f4d5f7c3d57c825bce9f1155ed092fc33a5de377b734ea4d0d7ed2ffaad3577d8227d9ce98824866efba8f65a05fa3d1499cd4b90b/loat-anh-quy-gia-it-nguoi-biet-ve-co-do-hue-nam-1910-Hinh-2.jpg"
+                    alt="Huế xưa"
+                >
+
+                <div class="image-caption">
+
+                    <small>GIAI ĐOẠN 3 · THỜI NIÊN THIẾU</small>
+
+                    <h3>Huế xưa</h3>
+
+                </div>
+
+            </div>
+
+            <div class="stage-text reveal">
+
+                <div class="stage-number">
+                    GIAI ĐOẠN 3 · MỞ RỘNG THẾ GIỚI
+                </div>
+
+                <h3>
+                    Huế – bước ra khỏi không gian quê nhà
+                </h3>
+
+                <p>
+                    Khi đến Huế, nhân vật tiếp xúc với một môi trường
+                    rộng lớn và phức tạp hơn.
+                    Việc học tập cùng những trải nghiệm trong đời sống
+                    giúp cậu có thêm cơ hội quan sát xã hội.
+                </p>
+
+                <p>
+                    Đây là bước chuyển quan trọng:
+                    từ một thế giới chủ yếu xoay quanh gia đình và làng quê,
+                    nhân vật bắt đầu nhìn rộng hơn về đất nước,
+                    con người và những vấn đề của xã hội.
+                </p>
+
+                <div class="stage-points">
+
+                    <div class="stage-point">
+                        <strong>Học tập:</strong>
+                        tri thức mở rộng cách nhìn về thế giới.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Quan sát:</strong>
+                        cuộc sống bên ngoài khiến nhân vật suy nghĩ nhiều hơn.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Nhận thức:</strong>
+                        tình yêu quê hương dần mở rộng thành tình cảm với đất nước.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GIAI ĐOẠN 4 -->
+
+        <div class="stage">
+
+            <div class="image-card stage-image reveal">
+
+                <img
+                    src="https://media.gody.vn/images/binh-thuan/truong-duc-thanh/10-2016/20161020110641-truong-duc-thanh-phan-thiet-gody%20%287%29.jpg"
+                    alt="Trường Dục Thanh"
+                >
+
+                <div class="image-caption">
+
+                    <small>GIAI ĐOẠN 4 · TUỔI HAI MƯƠI</small>
+
+                    <h3>Dục Thanh</h3>
+
+                </div>
+
+            </div>
+
+            <div class="stage-text reveal">
+
+                <div class="stage-number">
+                    GIAI ĐOẠN 4 · TRƯỞNG THÀNH
+                </div>
+
+                <h3>
+                    Dục Thanh – tri thức gắn với trách nhiệm
+                </h3>
+
+                <p>
+                    Dục Thanh đánh dấu một giai đoạn nhân vật
+                    có thêm những trải nghiệm về giáo dục,
+                    về thanh niên và về cuộc sống.
+                </p>
+
+                <p>
+                    Những suy nghĩ về đất nước ngày càng trở nên rõ ràng.
+                    Nhân vật không chỉ muốn hiểu cuộc sống,
+                    mà còn bắt đầu suy nghĩ về việc mình có thể làm gì
+                    trước hoàn cảnh của dân tộc.
+                </p>
+
+                <div class="stage-points">
+
+                    <div class="stage-point">
+                        <strong>Tri thức:</strong>
+                        học không chỉ để biết mà còn để hiểu.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Trách nhiệm:</strong>
+                        hiểu hoàn cảnh đất nước để suy nghĩ về tương lai.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Khát vọng:</strong>
+                        mong muốn tìm kiếm một con đường có ý nghĩa.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GIAI ĐOẠN 5 -->
+
+        <div class="stage">
+
+            <div class="image-card stage-image reveal">
+
+                <img
+                    src="https://photo.znews.vn/Uploaded/spuoouo/2025_10_20/Bennharong_7.jpg"
+                    alt="Bến Nhà Rồng"
+                >
+
+                <div class="image-caption">
+
+                    <small>GIAI ĐOẠN 5 · BƯỚC NGOẶT</small>
+
+                    <h3>Bến Nhà Rồng</h3>
+
+                </div>
+
+            </div>
+
+            <div class="stage-text reveal">
+
+                <div class="stage-number">
+                    GIAI ĐOẠN 5 · BƯỚC NGOẶT
+                </div>
+
+                <h3>
+                    Bến Nhà Rồng – từ suy nghĩ đến hành động
+                </h3>
+
+                <p>
+                    Bến Nhà Rồng là điểm hội tụ của cả hành trình.
+                    Những trải nghiệm từ gia đình, quê hương,
+                    học tập và cuộc sống đã dần tạo nên một quyết định lớn.
+                </p>
+
+                <p>
+                    Ngày 5/6/1911, Nguyễn Tất Thành rời Bến Nhà Rồng,
+                    mở đầu chuyến đi ra nước ngoài để tìm con đường
+                    giải phóng dân tộc.
+                    Trong mạch truyện, đây là thời điểm tuổi trẻ
+                    chuyển thành hành động và khát vọng được đặt trước thử thách.
+                </p>
+
+                <div class="stage-points">
+
+                    <div class="stage-point">
+                        <strong>Điểm hội tụ:</strong>
+                        mọi trải nghiệm trước đó góp phần dẫn đến quyết định.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Khát vọng:</strong>
+                        mong muốn tìm hiểu thế giới để tìm một hướng đi cho dân tộc.
+                    </div>
+
+                    <div class="stage-point">
+                        <strong>Bước ngoặt:</strong>
+                        một hành trình mới bắt đầu từ Bến Nhà Rồng.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     10 NỘI DUNG CHÍNH
+========================================================= -->
+
+<section id="noidung" class="content">
+
+    <div class="section-number">10</div>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                10 · Nội dung chính
+            </div>
+
+            <h2>
+                Quá trình một con người trưởng thành
+            </h2>
+
+            <p>
+                Tác phẩm không chỉ kể một hành trình,
+                mà còn kể quá trình hình thành tình cảm,
+                nhận thức và khát vọng.
+            </p>
+
+        </div>
+
+        <div class="content-layout">
+
+            <div class="image-card content-photo reveal">
+
+                <img
+                    src="https://cdn.nhandan.vn/images/HvOYxOL7S_B5gKLe14Wz7yKQ7DsZI8lpduhIjgA8GzPuChq04y3aN0n9-z9-3flsOHO2ECDL8TKfhzMKT-RpKZQ-aUurfSoLCA21_kumsFLRGe4lGq36LMTpx7u4CfHY/img-2683-6280.jpg.avif"
+                    alt="Quê hương xứ Nghệ và hoa sen"
+                >
+
+                <div class="image-caption">
+
+                    <small>KHÔNG GIAN QUÊ HƯƠNG</small>
+
+                    <h3>
+                        Hương sen và miền quê xứ Nghệ
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="content-text reveal">
+
+                <div class="eyebrow">
+                    Nội dung trọng tâm
+                </div>
+
+                <h3>
+                    Tác phẩm không chỉ kể một hành trình,
+                    mà kể quá trình một con người trưởng thành.
+                </h3>
+
+                <p>
+                    Nếu nhìn toàn bộ tác phẩm như một đường dây phát triển,
+                    ta thấy mỗi giai đoạn đều bổ sung một yếu tố mới
+                    cho nhân vật.
+                </p>
+
+                <div class="content-list">
+
+                    <div>
+                        <strong>01 · Gia đình và quê hương</strong><br>
+                        Là nền tảng hình thành tình cảm,
+                        nếp sống và những phẩm chất đầu tiên.
+                    </div>
+
+                    <div>
+                        <strong>02 · Học tập và tri thức</strong><br>
+                        Giúp nhân vật mở rộng tầm nhìn
+                        vượt ra khỏi phạm vi làng quê.
+                    </div>
+
+                    <div>
+                        <strong>03 · Trải nghiệm cuộc sống</strong><br>
+                        Những điều mắt thấy, tai nghe
+                        khiến suy nghĩ về xã hội ngày càng sâu sắc.
+                    </div>
+
+                    <div>
+                        <strong>04 · Tình thương con người</strong><br>
+                        Sự quan tâm tới cuộc sống của người dân
+                        trở thành một nét quan trọng trong thế giới tinh thần.
+                    </div>
+
+                    <div>
+                        <strong>05 · Khát vọng tìm đường</strong><br>
+                        Nhân vật không dừng lại ở suy nghĩ
+                        mà hướng tới một hành động có ý nghĩa.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     11 GIÁ TRỊ
+========================================================= -->
+
+<section id="giatri" class="themes">
+
+    <div class="section-number">11</div>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                11 · Giá trị
+            </div>
+
+            <h2>
+                Những mạch nội dung nổi bật
+            </h2>
+
+            <p>
+                Bên dưới câu chuyện lịch sử là những vấn đề
+                rất gần với quá trình trưởng thành của mỗi con người.
+            </p>
+
+        </div>
+
+        <div class="theme-grid">
+
+            <div class="theme-card reveal">
+
+                <div class="theme-image">
+
+                    <img
+                        src="https://static.vinwonders.com/production/cum-di-tich-lang-hoang-tru.jpg"
+                        alt="Hoàng Trù"
+                    >
+
+                </div>
+
+                <div class="theme-content">
+
+                    <div class="icon">🏡</div>
+
+                    <h3>
+                        Cội nguồn gia đình
+                    </h3>
+
+                    <p>
+                        Gia đình và quê hương xuất hiện như cái nôi
+                        nuôi dưỡng tâm hồn, tình cảm và nhân cách.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="theme-card reveal">
+
+                <div class="theme-image">
+
+                    <img
+                        src="https://cdn.kienthuc.net.vn/images/cf739f51f3276a5be16e9cbb75eb6705677b929f952f8288620ae163ad947fba12f5ad5638fa9d0d221b01ba9c3a24754c6e26fb76ab3b82862cf4f4d5f7c3d57c825bce9f1155ed092fc33a5de377b734ea4d0d7ed2ffaad3577d8227d9ce98824866efba8f65a05fa3d1499cd4b90b/loat-anh-quy-gia-it-nguoi-biet-ve-co-do-hue-nam-1910-Hinh-2.jpg"
+                        alt="Huế xưa"
+                    >
+
+                </div>
+
+                <div class="theme-content">
+
+                    <div class="icon">📚</div>
+
+                    <h3>
+                        Giá trị của học tập
+                    </h3>
+
+                    <p>
+                        Học tập giúp con người mở rộng hiểu biết,
+                        biết quan sát và đặt câu hỏi trước cuộc sống.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="theme-card reveal">
+
+                <div class="theme-image">
+
+                    <img
+                        src="https://media.gody.vn/images/binh-thuan/truong-duc-thanh/10-2016/20161020110641-truong-duc-thanh-phan-thiet-gody%20%287%29.jpg"
+                        alt="Dục Thanh"
+                    >
+
+                </div>
+
+                <div class="theme-content">
+
+                    <div class="icon">🌱</div>
+
+                    <h3>
+                        Quá trình trưởng thành
+                    </h3>
+
+                    <p>
+                        Con người trưởng thành qua học tập,
+                        trải nghiệm, suy nghĩ và lựa chọn.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="theme-card reveal">
+
+                <div class="theme-image">
+
+                    <img
+                        src="https://photo.znews.vn/Uploaded/spuoouo/2025_10_20/Bennharong_7.jpg"
+                        alt="Bến Nhà Rồng"
+                    >
+
+                </div>
+
+                <div class="theme-content">
+
+                    <div class="icon">🌏</div>
+
+                    <h3>
+                        Khát vọng và hành động
+                    </h3>
+
+                    <p>
+                        Suy nghĩ chỉ thực sự trở thành giá trị
+                        khi được biến thành hành động có mục đích.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     12 BÀI HỌC
+========================================================= -->
+
+<section id="baihoc" class="lesson">
+
+    <div class="section-number">12</div>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                12 · Bài học
+            </div>
+
+            <h2>
+                Điều tác phẩm để lại cho người trẻ
+            </h2>
+
+            <p>
+                Từ hành trình của nhân vật,
+                chúng ta có thể liên hệ với chính quá trình học tập
+                và trưởng thành của mình.
+            </p>
+
+        </div>
+
+        <div class="lesson-grid">
+
+            <div class="lesson-card reveal">
+
+                <div class="lesson-photo">
+
+                    <img
+                        src="https://bbt.1cdn.vn/thumbs/1200x800/2024/06/27/c025837938cb9b95c2da.jpg"
+                        alt="Quê hương"
+                    >
+
+                </div>
+
+                <div class="lesson-body">
+
+                    <div class="lesson-icon">🌿</div>
+
+                    <h3>
+                        1. Biết trân trọng cội nguồn
+                    </h3>
+
+                    <p>
+                        Mỗi người đều có một nơi để bắt đầu.
+                        Quê hương và gia đình không chỉ là ký ức
+                        mà còn góp phần tạo nên cách ta sống và suy nghĩ.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-card reveal">
+
+                <div class="lesson-photo">
+
+                    <img
+                        src="https://cdn.kienthuc.net.vn/images/cf739f51f3276a5be16e9cbb75eb6705677b929f952f8288620ae163ad947fba12f5ad5638fa9d0d221b01ba9c3a24754c6e26fb76ab3b82862cf4f4d5f7c3d57c825bce9f1155ed092fc33a5de377b734ea4d0d7ed2ffaad3577d8227d9ce98824866efba8f65a05fa3d1499cd4b90b/loat-anh-quy-gia-it-nguoi-biet-ve-co-do-hue-nam-1910-Hinh-2.jpg"
+                        alt="Huế"
+                    >
+
+                </div>
+
+                <div class="lesson-body">
+
+                    <div class="lesson-icon">📖</div>
+
+                    <h3>
+                        2. Học để hiểu thế giới
+                    </h3>
+
+                    <p>
+                        Học tập không chỉ nhằm đạt điểm số.
+                        Tri thức giúp chúng ta nhìn rộng hơn,
+                        hiểu sâu hơn và biết đặt những câu hỏi có ý nghĩa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-card reveal">
+
+                <div class="lesson-photo">
+
+                    <img
+                        src="https://media.gody.vn/images/binh-thuan/truong-duc-thanh/10-2016/20161020110641-truong-duc-thanh-phan-thiet-gody%20%287%29.jpg"
+                        alt="Dục Thanh"
+                    >
+
+                </div>
+
+                <div class="lesson-body">
+
+                    <div class="lesson-icon">🌱</div>
+
+                    <h3>
+                        3. Trưởng thành từ trải nghiệm
+                    </h3>
+
+                    <p>
+                        Mỗi trải nghiệm, dù vui hay khó khăn,
+                        đều có thể trở thành một bài học
+                        nếu chúng ta biết suy ngẫm.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-card reveal">
+
+                <div class="lesson-photo">
+
+                    <img
+                        src="https://static.vinwonders.com/production/cum-di-tich-lang-hoang-tru.jpg"
+                        alt="Hoàng Trù"
+                    >
+
+                </div>
+
+                <div class="lesson-body">
+
+                    <div class="lesson-icon">❤️</div>
+
+                    <h3>
+                        4. Biết yêu thương con người
+                    </h3>
+
+                    <p>
+                        Một người trẻ không chỉ cần kiến thức
+                        mà còn cần lòng nhân ái và khả năng quan tâm
+                        đến những người xung quanh.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-card reveal">
+
+                <div class="lesson-photo">
+
+                    <img
+                        src="https://photo.znews.vn/Uploaded/spuoouo/2025_10_20/Bennharong_7.jpg"
+                        alt="Bến Nhà Rồng"
+                    >
+
+                </div>
+
+                <div class="lesson-body">
+
+                    <div class="lesson-icon">🎯</div>
+
+                    <h3>
+                        5. Sống có mục tiêu
+                    </h3>
+
+                    <p>
+                        Mục tiêu giúp con người biết mình muốn đi đâu
+                        và có thêm động lực để vượt qua những trở ngại
+                        trên đường đi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lesson-card reveal">
+
+                <div class="lesson-photo">
+
+                    <img
+                        src="https://cdn.nhandan.vn/images/HvOYxOL7S_B5gKLe14Wz7yKQ7DsZI8lpduhIjgA8GzPuChq04y3aN0n9-z9-3flsOHO2ECDL8TKfhzMKT-RpKZQ-aUurfSoLCA21_kumsFLRGe4lGq36LMTpx7u4CfHY/img-2683-6280.jpg.avif"
+                        alt="Hoa sen"
+                    >
+
+                </div>
+
+                <div class="lesson-body">
+
+                    <div class="lesson-icon">🌸</div>
+
+                    <h3>
+                        6. Không ngừng vươn lên
+                    </h3>
+
+                    <p>
+                        Hình ảnh búp sen gợi liên tưởng đến quá trình
+                        lớn lên từng ngày: bắt đầu từ những điều bình dị
+                        và hướng tới những giá trị tốt đẹp hơn.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     13 THÔNG ĐIỆP
+========================================================= -->
+
+<section id="thongdiep" class="message">
+
+    <div class="container">
+
+        <div class="message-content reveal">
+
+            <div class="eyebrow" style="color:#f0beca;">
+                13 · Thông điệp
+            </div>
+
+            <h2>
+                Vì sao lại là<br>
+                “Búp Sen Xanh”?
+            </h2>
+
+            <p>
+                Sen thường gợi đến vẻ đẹp thanh khiết,
+                nhưng một bông sen không xuất hiện ngay lập tức.
+                Nó bắt đầu từ một mầm nhỏ,
+                được nuôi dưỡng qua thời gian rồi mới vươn lên khỏi mặt nước.
+            </p>
+
+            <div class="message-highlight">
+
+                <p>
+                    Cũng giống như vậy, hành trình của nhân vật trong tác phẩm
+                    không bắt đầu bằng một hình tượng hoàn chỉnh.
+                    Đó là quá trình được hình thành từng bước:
+                    <b>từ gia đình → quê hương → học tập → trải nghiệm
+                    → nhận thức → lựa chọn và hành động.</b>
+                </p>
+
+                <br>
+
+                <p>
+                    Vì thế, hình ảnh <b>“búp sen xanh”</b> có thể được cảm nhận
+                    như biểu tượng cho một tuổi trẻ đang lớn lên:
+                    còn nhiều điều phải học hỏi,
+                    nhưng đã mang trong mình những phẩm chất,
+                    tình cảm và khát vọng hướng tới điều tốt đẹp.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     14 KHÔNG GIAN HÌNH ẢNH
+========================================================= -->
+
+<section class="gallery">
+
+    <div class="section-number">14</div>
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <div class="eyebrow">
+                14 · Không gian hình ảnh
+            </div>
+
+            <h2>
+                Những dấu ấn còn lại
+            </h2>
+
+            <p>
+                Nhấp vào từng hình ảnh để phóng to.
+            </p>
+
+        </div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://bbt.1cdn.vn/thumbs/1200x800/2024/06/27/c025837938cb9b95c2da.jpg"
+                    alt="Làng Sen"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Làng Sen</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://static.vinwonders.com/production/cum-di-tich-lang-hoang-tru.jpg"
+                    alt="Hoàng Trù"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Hoàng Trù</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://cdn.kienthuc.net.vn/images/cf739f51f3276a5be16e9cbb75eb6705677b929f952f8288620ae163ad947fba12f5ad5638fa9d0d221b01ba9c3a24754c6e26fb76ab3b82862cf4f4d5f7c3d57c825bce9f1155ed092fc33a5de377b734ea4d0d7ed2ffaad3577d8227d9ce98824866efba8f65a05fa3d1499cd4b90b/loat-anh-quy-gia-it-nguoi-biet-ve-co-do-hue-nam-1910-Hinh-2.jpg"
+                    alt="Huế xưa"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Huế xưa</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://media.gody.vn/images/binh-thuan/truong-duc-thanh/10-2016/20161020110641-truong-duc-thanh-phan-thiet-gody%20%287%29.jpg"
+                    alt="Dục Thanh"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Dục Thanh</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://photo.znews.vn/Uploaded/spuoouo/2025_10_20/Bennharong_7.jpg"
+                    alt="Bến Nhà Rồng"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Bến Nhà Rồng</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://cdn.nhandan.vn/images/HvOYxOL7S_B5gKLe14Wz7yKQ7DsZI8lpduhIjgA8GzPuChq04y3aN0n9-z9-3flsOHO2ECDL8TKfhzMKT-RpKZQ-aUurfSoLCA21_kumsFLRGe4lGq36LMTpx7u4CfHY/img-2683-6280.jpg.avif"
+                    alt="Hoa sen"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Hoa sen quê hương</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://cdn.nhandan.vn/images/HvOYxOL7S_B5gKLe14Wz7yKQ7DsZI8lpduhIjgA8GzPuChq04y3aN0n9-z9-3flsOHO2ECDL8TKfhzMKT-RpKZQ-aUurfSoLCA21_kumsFLRGe4lGq36LMTpx7u4CfHY/img-20240514-154442-800-x-450-pixel-5716.jpg.avif"
+                    alt="Sen xứ Nghệ"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Sen xứ Nghệ</h3>
+                </div>
+
+            </div>
+
+
+            <div class="gallery-item reveal"
+                 onclick="openImage(this.querySelector('img').src)">
+
+                <img
+                    src="https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%205/Ng%C3%A0y_19/NGOC/LA14.jpg"
+                    alt="Hoa sen"
+                >
+
+                <div class="gallery-overlay">
+                    <h3>Hình ảnh sen – biểu tượng</h3>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     15 KẾT THÚC
+========================================================= -->
+
+<section class="end">
+
+    <div class="end-content reveal">
+
+        <div class="eyebrow" style="color:#f0beca;">
+            15 · Kết thúc
+        </div>
+
+        <h2>
+            Từ một búp sen nhỏ<br>
+            đến một hành trình lớn
+        </h2>
+
+        <p>
+            <i>Búp Sen Xanh</i> khép lại ở một bước ngoặt,
+            nhưng những điều mà tác phẩm đặt ra vẫn còn tiếp tục:
+            con người được hình thành từ gia đình,
+            được mở rộng bởi tri thức,
+            được thử thách qua trải nghiệm
+            và trưởng thành bằng những lựa chọn của chính mình.
+        </p>
+
+        <div class="end-box">
+
+            <p>
+                <b>
+                    Với người trẻ hôm nay,
+                    bài học quan trọng nhất có lẽ là:
+                    hãy bắt đầu từ những điều nhỏ bé,
+                    không ngừng học hỏi,
+                    biết yêu thương cội nguồn
+                    và dám bước đi khi đã tìm thấy điều mình tin tưởng.
+                </b>
+            </p>
+
+        </div>
+
+        <div style="margin-top:35px;font-size:28px;">
+            🌸
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>
+        <strong>🌸 BÚP SEN XANH · SƠN TÙNG 🌸</strong>
+    </p>
+
+    <p style="margin-top:8px;">
+        Website thuyết trình tác phẩm văn học
+    </p>
+
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="imageModal" onclick="closeImage()">
+
+    <div class="modal-close">
+        ×
+    </div>
+
+    <img id="modalImage" src="" alt="Ảnh phóng to">
+
+</div>
+
+
+<button id="topButton">
+    ↑
+</button>
+
+
+<script>
+
+/* LOADING */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+            .getElementById("loader")
+            .classList.add("hide");
+
+    },700);
+
+});
+
+
+/* HEADER */
+
+const header =
+    document.getElementById("header");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 80){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* REVEAL */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+
+    revealElements.forEach(function(element){
+
+        const rect =
+            element.getBoundingClientRect();
+
+        if(rect.top < window.innerHeight - 70){
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener(
+    "scroll",
+    revealOnScroll,
+    {passive:true}
+);
+
+window.addEventListener(
+    "load",
+    revealOnScroll
+);
+
+
+/* TOP BUTTON */
+
+const topButton =
+    document.getElementById("topButton");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY > 600){
+
+        topButton.classList.add("show");
+
+    }else{
+
+        topButton.classList.remove("show");
+
+    }
+
+});
+
+topButton.addEventListener("click",function(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
+
+
+/* IMAGE MODAL */
+
+function openImage(src){
+
+    const modal =
+        document.getElementById("imageModal");
+
+    const image =
+        document.getElementById("modalImage");
+
+    image.src = src;
+
+    modal.classList.add("show");
+
+}
+
+function closeImage(){
+
+    document
+        .getElementById("imageModal")
+        .classList.remove("show");
+
+}
+
+document
+    .getElementById("modalImage")
+    .addEventListener("click",function(event){
+
+        event.stopPropagation();
+
+    });
+
+
+/* ESC */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "Escape"){
+
+        closeImage();
+
+    }
+
+});
+
+
+/* HERO PARALLAX */
+
+const hero =
+    document.querySelector(".hero");
+
+window.addEventListener("scroll",function(){
+
+    if(window.scrollY < window.innerHeight){
+
+        hero.style.backgroundPositionY =
+            (window.scrollY * .3) + "px";
+
+    }
+
+},{passive:true});
+
+
+/* SMOOTH NAVIGATION */
+
+document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(function(link){
+
+        link.addEventListener("click",function(event){
+
+            const target =
+                document.querySelector(
+                    link.getAttribute("href")
+                );
+
+            if(target){
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+/* MOUSE TILT */
+
+document
+    .querySelectorAll(
+        ".lesson-card,.theme-card,.part-box"
+    )
+    .forEach(function(card){
+
+        card.addEventListener(
+            "mousemove",
+            function(event){
+
+                const rect =
+                    card.getBoundingClientRect();
+
+                const x =
+                    event.clientX - rect.left;
+
+                const y =
+                    event.clientY - rect.top;
+
+                const rotateX =
+                    ((y / rect.height) - .5) * -3;
+
+                const rotateY =
+                    ((x / rect.width) - .5) * 3;
+
+                card.style.transform =
+                    "perspective(900px) " +
+                    "rotateX(" + rotateX + "deg) " +
+                    "rotateY(" + rotateY + "deg) " +
+                    "translateY(-5px)";
+
+            }
+        );
+
+        card.addEventListener(
+            "mouseleave",
+            function(){
+
+                card.style.transform = "";
+
+            }
+        );
+
+    });
+
+
+/* FLOATING LOTUS */
+
+const lotus =
+    document.querySelectorAll(".floating-lotus");
+
+lotus.forEach(function(item,index){
+
+    item.style.animationDelay =
+        (index * 1.7) + "s";
+
+});
+
+</script>
+
+</body>
+</html>
